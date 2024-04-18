@@ -1,0 +1,21 @@
+-Instant:
+
+if(`Right X-`<0.15 & `Right X+`<0.15 & `Right Y-`<0.15 & `Right Y+`<0.15, 1, 0)
+
+
+-After X seconds:
+X = Seconds until inactive cursor recenters
+
+if(smooth(`Right X-`<0.15 & `Right X+`<0.15 & `Right Y`<0.15 & `Right Y+`<0.15, X, 0) - 0.45, 1, 0)
+
+
+-Resist recenter while 'Thumb R' clicked in:
+X = Seconds until inactive cursor recenters
+
+if(smooth(`Right X-`<0.15 & `Right X+`<0.15 & `Right Y`<0.15 & `Right Y+`<0.15, X, 0) - 0.45 + if(`Thumb R`, -1, 0) , 1, 0)
+
+
+-'Thumb R' resist toggle:
+X = Seconds until inactive cursor recenters
+
+if(smooth(`Right X-`<0.15 & `Right X+`<0.15 & `Right Y`<0.15 & `Right Y+`<0.15, X, 0) - 0.45 - toggle(`Thumb R`), 1, 0)
